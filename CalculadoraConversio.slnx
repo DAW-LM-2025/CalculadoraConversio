@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Calculadora/Calculadora.csproj" />
+  <Project Path="Conversors/Conversors.csproj" />
+  <Project Path="TestsConversors/TestsConversors.csproj" />
+</Solution>
