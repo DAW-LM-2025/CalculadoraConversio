@@ -7,7 +7,7 @@ public class UnitTest1
     [Fact]
     public void PucConvertirPersonaAJson()
     {
-        // Arrange
+        // Arrange // Given
         Persona persona = new ()
         {
             Nombre = "Dani",
@@ -20,14 +20,15 @@ public class UnitTest1
                 País = "USA"
             }
         };
-        IPersona2Json conversor = default!; // TODO: Crear una instancia de la clase que implementa IPersona2Json
+        IPersona2Json conversor = new Persona2Json(); // TODO: Crear una instancia de la clase que implementa IPersona2Json
 
-        // Act
+        // Act // When
         var json = conversor.ConverteixAjson(persona);
 
-        // Assert
+        // Assert // Then
         Assert.NotNull(json);
         Assert.StartsWith("{", json);
         Assert.EndsWith("}", json);
+        Assert.Contains("\"Hobbies\":", json);
     }
 }
